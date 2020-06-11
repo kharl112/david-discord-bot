@@ -1,1 +1,1 @@
-worker: python davidbot526.py
+worker: python david526.py
