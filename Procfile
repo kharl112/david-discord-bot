@@ -1,1 +1,0 @@
-worker: python david526.py
