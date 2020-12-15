@@ -4,10 +4,9 @@
   "description": "This bot is only for the ",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "serve": "node server.js"
   },
   "keywords": [
-    "discord",
     "discord",
     "bot"
   ],
@@ -16,6 +15,7 @@
   "dependencies": {
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "mongoose": "^5.11.8"
   }
 }

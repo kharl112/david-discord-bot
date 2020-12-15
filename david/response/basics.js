@@ -8,7 +8,6 @@ const view_avatar = (message) => {
 }
 
 
-
 module.exports = {
     view_avatar,
     ping,

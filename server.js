@@ -1,13 +1,17 @@
 const Discord = require('discord.js');
+const express = require('express');
+const app = express();
 require('dotenv').config();
 const client = new Discord.Client();
 const mongoose = require('mongoose');
-const { view_avatar, ping } = require('./response/basics');
-const { view_profile, user_register } = require('./response/profile');
-const { add_metal, add_n_word } = require('./response/points');
+const david = require('./david/david');
 
 client.on('ready', () => {
     console.log(`Ayyyyy! ${client.user.tag} finallly woke up!`);
+});
+
+client.on('message', async message => {
+   david(message);
 });
 
 mongoose.connect(process.env.MONGO_URI, {
@@ -15,31 +19,8 @@ mongoose.connect(process.env.MONGO_URI, {
     useUnifiedTopology : true
 }, () => console.log('david is connected to the database'));
 
-client.on('message', async message => {
-    let d = message.content.split("").slice(0, 2);
-    d = d.join("").toString();
-    let user = message.mentions.users.first() || {id: ""};
 
-    if (d === 'd?') {
-        message.content === 'd?' ? ping(message) : null;
-
-        message.content === 'd? register' ? user_register(message) : null;
-
-        message.content === 'd? av' ||
-            message.content === `d? av <@!${user.id}>`
-            ? view_avatar(message) : null;
-
-        message.content === 'd? prof' ||
-            message.content === `d? prof <@!${user.id}>`
-            ? view_profile(message) : null;
-    }
-
-    let has_m_points = message.content.match(/metal|dave mustaine|metallica|megadeth|david ellefson|80s|david/gi);
-    let has_n_points = message.content.match(/nigger|nigga|nigg|niggah|negro|negrito|negrata/gi);
-
-    has_m_points ? add_metal(message) : null;
-    has_n_points ? add_n_word(message) : null;
-
-});
+app.route('/', (req, res) => res.send("<h2>David woke up!</h2>"));
 
 client.login(process.env.API_KEY)
+app.listen(process.env.PORT || 8000, () => console.log(`listening on PORT ${process.env.PORT || 8000}`))
