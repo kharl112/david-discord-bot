@@ -1,7 +1,4 @@
 const { MessageEmbed } = require('discord.js');
-const embed = new MessageEmbed();
-
-
 const ping = (message) => {
     message.channel.send("What?");
 }
