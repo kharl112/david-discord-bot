@@ -1,19 +1,28 @@
 const Discord = require('discord.js');
 require('dotenv').config();
 const client = new Discord.Client();
-const { view_avatar, ping } = require('./response/basics');
+const { view_avatar, ping, view_profile } = require('./response/basics');
 
 client.on('ready', () => {
     console.log(`Ayyyyy! ${client.user.tag} finallly woke up!`);
 });
 
-client.on('message', message => {
-    let david = message.content.split("").slice(0, 6);
-    david = david.join("").toString();
+client.on('message', async message => {
+    let d = message.content.split("").slice(0, 2);
+    d = d.join("").toString();
+    let user = message.mentions.users.first() || {id: ""};
 
-    if(david === 'david?'){
-        message.content === 'david?' ? ping(message) : null; 
-        message.content === 'david? avatar' ? view_avatar(message) : null;
+    if (d === 'd?') {
+        message.content === 'd?' ? ping(message) : null;
+
+        message.content === 'd? av' ||
+            message.content === `d? av <@!${user.id}>`
+            ? view_avatar(message) : null;
+
+        message.content === 'd? prof' ||
+            message.content === `d? prof <@!${user.id}>`
+            ? view_profile(message) : null;
+
     }
 });
 
