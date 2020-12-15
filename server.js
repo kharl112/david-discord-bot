@@ -3,6 +3,7 @@ require('dotenv').config();
 const client = new Discord.Client();
 const mongoose = require('mongoose');
 const { view_avatar, ping, view_profile, user_register } = require('./response/basics');
+const { view_profile, user_register } = require('./response/profile');
 
 client.on('ready', () => {
     console.log(`Ayyyyy! ${client.user.tag} finallly woke up!`);
