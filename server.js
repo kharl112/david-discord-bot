@@ -1,6 +1,4 @@
 const Discord = require('discord.js');
-const express = require('express');
-const app = express();
 require('dotenv').config();
 const client = new Discord.Client();
 const mongoose = require('mongoose');
@@ -20,7 +18,4 @@ mongoose.connect(process.env.MONGO_URI, {
 }, () => console.log('david is connected to the database'));
 
 
-app.get('/', (req, res) => res.send("<h2>David woke up!</h2>"));
-
 client.login(process.env.API_KEY)
-app.listen(process.env.PORT || 8000, () => console.log(`listening on PORT ${process.env.PORT || 8000}`))
