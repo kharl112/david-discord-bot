@@ -1,11 +1,17 @@
 const Discord = require('discord.js');
 require('dotenv').config();
 const client = new Discord.Client();
+const mongoose = require('mongoose');
 const { view_avatar, ping, view_profile } = require('./response/basics');
 
 client.on('ready', () => {
     console.log(`Ayyyyy! ${client.user.tag} finallly woke up!`);
 });
+
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology : true
+}, () => console.log('david is connected to the database'));
 
 client.on('message', async message => {
     let d = message.content.split("").slice(0, 2);
