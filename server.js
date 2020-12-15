@@ -2,8 +2,9 @@ const Discord = require('discord.js');
 require('dotenv').config();
 const client = new Discord.Client();
 const mongoose = require('mongoose');
-const { view_avatar, ping, view_profile, user_register } = require('./response/basics');
+const { view_avatar, ping } = require('./response/basics');
 const { view_profile, user_register } = require('./response/profile');
+const { add_metal, add_n_word } = require('./response/points');
 
 client.on('ready', () => {
     console.log(`Ayyyyy! ${client.user.tag} finallly woke up!`);
@@ -32,6 +33,13 @@ client.on('message', async message => {
             message.content === `d? prof <@!${user.id}>`
             ? view_profile(message) : null;
     }
+
+    let has_m_points = message.content.match(/metal|dave mustaine|metallica|megadeth|david ellefson|80s|david/gi);
+    let has_n_points = message.content.match(/nigger|nigga|nigg|niggah|negro|negrito|negrata/gi);
+
+    has_m_points ? add_metal(message) : null;
+    has_n_points ? add_n_word(message) : null;
+
 });
 
 client.login(process.env.API_KEY)

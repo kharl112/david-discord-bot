@@ -1,4 +1,3 @@
-const { MessageEmbed } = require('discord.js');
 const ping = (message) => {
     message.channel.send("What?");
 }
@@ -12,7 +11,5 @@ const view_avatar = (message) => {
 
 module.exports = {
     view_avatar,
-    view_profile,
     ping,
-    user_register
 }
