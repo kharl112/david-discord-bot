@@ -1,5 +1,5 @@
 
-const { view_avatar, ping } = require('./response/basics');
+const { view_avatar, ping, view_ranking } = require('./response/basics');
 const { view_profile, user_register } = require('./response/profile');
 const { add_metal, add_n_word } = require('./response/points');
 
@@ -8,13 +8,13 @@ module.exports = message => {
     d = d.join("").toString();
     let user = message.mentions.users.first() || {id: ""};
     if (d === 'd?') {
+
         message.content === 'd?' ? ping(message) : null;
-
         message.content === 'd? register' ? user_register(message) : null;
+        /d\? av/gi.test(message.content) ? view_avatar(message) : null;
+        /d\? prof/gi.test(message.content) ? view_profile(message) : null;
+        /d\? rank/gi.test(message.content) ? view_ranking(message) : null;
 
-
-            /d\? av/gi.test(message.content) ? view_avatar(message) : null;
-            /d\? prof/gi.test(message.content) ? view_profile(message) : null;
     }
 
     let has_m_points = message.content.match(/metal|dave mustaine|metallica|megadeth|david ellefson|80s|david/gi);
