@@ -37,7 +37,20 @@ const view_embed_profile = {
     timestamp: new Date()
 };
 
+const view_pp_size = {
+    color: 0x970108,
+    author: {
+        name: '',
+        icon_url: ''
+    },
+    description: '',
+    footer: {
+        text: '',
+    }
+}
+
 module.exports = {
     view_rank_list,
-    view_embed_profile
+    view_embed_profile,
+    view_pp_size
 }

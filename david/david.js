@@ -1,7 +1,7 @@
 
 const { view_avatar, ping, view_ranking } = require('./response/basics');
-const { view_profile, user_register } = require('./response/profile');
-const { add_metal, add_n_word } = require('./response/points');
+const { view_profile, user_register, user_pp } = require('./response/profile');
+const { add_metal, add_n_word, add_pp_size } = require('./response/points');
 
 module.exports = message => {
     let d = message.content.split("").slice(0, 2);
@@ -13,6 +13,9 @@ module.exports = message => {
         /d\? av/gi.test(message.content) ? view_avatar(message) : null;
         /d\? prof/gi.test(message.content) ? view_profile(message) : null;
         /d\? rank/gi.test(message.content) ? view_ranking(message) : null;
+        /d\? buy gel/gi.test(message.content) ? add_pp_size(message) : null;
+        /d\? pp/gi.test(message.content) ? user_pp(message) : null;
+
     }
 
     let has_m_points = message.content.match(/metal|dave mustaine|megadeth|david ellefson|80s|david/gi);
