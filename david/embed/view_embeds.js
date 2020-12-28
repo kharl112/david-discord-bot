@@ -28,6 +28,10 @@ const view_embed_profile = {
             name: '🎸``Metal Points``',
             value: 'Some value here',
             inline: true,
+        },
+        {
+            name: '🍆``Dick Size``',
+            value: 1
         }
     ],
     timestamp: new Date()

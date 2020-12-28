@@ -11,6 +11,7 @@ const view_profile = async(message) => {
     view_embed_profile.title = user.username;
     view_embed_profile.fields[0].value = `**${user_found.n_points}**`;
     view_embed_profile.fields[1].value = `**${user_found.m_points}**`;
+    view_embed_profile.fields[2].value = `**${user_found.pp_size}** inches`;
     view_embed_profile.thumbnail.url = user.displayAvatarURL();
 
 
