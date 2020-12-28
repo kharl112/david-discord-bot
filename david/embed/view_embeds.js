@@ -5,11 +5,7 @@ const view_rank_list = {
     description: 'type "d? register" on the chat if you want to join these faggots',
     fields: [
         {
-            name: 'Most Racist and Metal Head on earth',
-            value: '',
-        },
-        {
-            name: 'Faggots',
+            name: "Faggot's overall ranking",
             value: 'Some value here',
             inline: true,
         }
