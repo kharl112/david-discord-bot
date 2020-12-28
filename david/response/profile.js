@@ -9,8 +9,8 @@ const view_profile = async(message) => {
     if(!user_found) return message.channel.send(`❌ nigger <@!${user.id}> is not registered yet!`);
 
     view_embed_profile.title = user.username;
-    view_embed_profile.fields[0].value = user_found.n_points;
-    view_embed_profile.fields[1].value = user_found.m_points;
+    view_embed_profile.fields[0].value = `**${user_found.n_points}**`;
+    view_embed_profile.fields[1].value = `**${user_found.m_points}**`;
     view_embed_profile.thumbnail.url = user.displayAvatarURL();
 
 

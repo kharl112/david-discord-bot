@@ -1,6 +1,4 @@
 const User = require('../models/user');
-const { MessageEmbed } = require('discord.js');
-const embed = new MessageEmbed();
 const { view_rank_list } = require('../embed/view_embeds');
 
 
