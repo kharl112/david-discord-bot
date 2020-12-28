@@ -21,16 +21,16 @@ const view_embed_profile = {
     },
     fields: [
         {
-            name: '👨🏿``Nigger Count``',
+            name: '👨🏿 ``Nigger Count``',
             value: 'Some value here',
         },
         {
-            name: '🎸``Metal Points``',
+            name: '🎸 ``Metal Points``',
             value: 'Some value here',
             inline: true,
         },
         {
-            name: '🍆``Dick Size``',
+            name: '🍆 ``Dick Size``',
             value: 1
         }
     ],
