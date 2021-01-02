@@ -23,7 +23,8 @@ const user_register = async (message) => {
     const user = new User({
         discord_id: message.author.id,
         n_points: 0,
-        m_points: 0
+        m_points: 0,
+        pp_size: 0
     });
 
     try {
