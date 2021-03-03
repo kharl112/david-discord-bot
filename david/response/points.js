@@ -29,9 +29,6 @@ const add_n_word = async (message) => {
 const add_pp_size = async (message) => {
     const user_found = await User.findOne({ discord_id: message.author.id });
 
-    if (!user_found) 
-        return message.channel.send(`❌<@!${message.author.id}>, pussy you're not allowed to buy Titan gel bc you're not registered yet.`);
-
     if (user_found.n_points < 25)
         return message.channel.send(`❌ Hey <@!${message.author.id}>!, you need atleast 25 nigger counts to buy the serum.`);
 
@@ -40,7 +37,7 @@ const add_pp_size = async (message) => {
         user_found.n_points = user_found.n_points - 25;
         await user_found.save();
 
-        return message.channel.send(`<@!${message.author.id}>!, congrats faggot you've grown your dick🍆 by 1 inch, thanks for buying the serum.`);
+        return message.channel.send(`<@!${message.author.id}> !!!!, congrats faggot you've grown your dick🍆 by 1 inch.`);
     } catch (error) {
         return console.log(error);
     }
