@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 require('dotenv').config();
 const client = new Discord.Client();
 const mongoose = require('mongoose');
-const david = require('./david/david');
+const david = require('./david/response/david');
 
 client.on('ready', () => {
     console.log(`Ayyyyy! ${client.user.tag} finallly woke up!`);
