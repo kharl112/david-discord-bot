@@ -5,6 +5,10 @@ module.exports = (msg) => {
   if (david.toLowerCase() === "d?") {
     /d\? av/i.test(msg.content)
       ? Misc.view_av(msg)
+      : /d\? gay/i.test(msg.content)
+      ? Misc.gay(msg)
+      : /d\? racist/i.test(msg.content)
+      ? Misc.racist(msg)
       : /d\?/i.test(msg.content)
       ? Misc.ping(msg)
       : null;
