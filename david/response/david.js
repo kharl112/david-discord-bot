@@ -1,4 +1,4 @@
-const Misc = require("./misc/misc");
+const Misc = require("./Misc/misc");
 const Most = require("./Most/most");
 
 module.exports = (msg) => {
