@@ -1,6 +1,7 @@
 module.exports = ((msg) => {
-  const gay = (msg) => {
-    const members = msg.guild.members.cache.map((node) => node.user);
+  const gay = async (msg) => {
+    let members = await msg.guild.members.fetch();
+    members = members.map((node) => node.user);
     const gay_index = Math.floor(Math.random() * members.length);
 
     return msg.channel.send(
@@ -8,8 +9,9 @@ module.exports = ((msg) => {
     );
   };
 
-  const racist = (msg) => {
-    const members = msg.guild.members.cache.map((node) => node.user);
+  const racist = async (msg) => {
+    let members = await msg.guild.members.fetch();
+    members = members.map((node) => node.user);
     const racist_index = Math.floor(Math.random() * members.length);
 
     return msg.channel.send(
