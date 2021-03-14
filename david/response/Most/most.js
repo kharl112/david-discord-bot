@@ -1,4 +1,4 @@
-module.exports = ((msg) => {
+module.exports = (() => {
   const gay = async (msg) => {
     let members = await msg.guild.members.fetch();
     members = members.map((node) => node.user);
