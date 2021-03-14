@@ -19,7 +19,7 @@ const singleWord = (msg, url, cmd, { x, y }) => {
         .getBase64(Jimp.AUTO, (e, img64) => {
           if (e) throw e;
           const imageBuff = new Buffer.from(img64.split(",")[1], "base64");
-          const theImage = new MessageAttachment(imageBuff, "fuck.png");
+          const theImage = new MessageAttachment(imageBuff, `${cmd}.png`);
           return msg.channel.send(theImage);
         });
     });
