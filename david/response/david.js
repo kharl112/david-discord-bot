@@ -12,6 +12,8 @@ module.exports = (msg) => {
       ? ImageGen.facts(msg)
       : /d\? cmm/i.test(msg.content)
       ? ImageGen.cmm(msg)
+      : /d\? cardboard/i.test(msg.content)
+      ? ImageGen.cardboard(msg)
       : /d\? roast/i.test(msg.content)
       ? Misc.roast(msg)
       : /d\? gay/i.test(msg.content)

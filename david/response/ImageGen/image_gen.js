@@ -23,5 +23,16 @@ module.exports = (() => {
       y: 225,
     });
 
-  return { pass, facts, cmm };
+  const cardboard = (msg) =>
+    singleWord(
+      msg,
+      "https://imgflip.com/s/meme/Guy-Holding-Cardboard-Sign.jpg",
+      "cardboard",
+      {
+        x: 300,
+        y: 100,
+      }
+    );
+
+  return { pass, facts, cmm, cardboard };
 })();
