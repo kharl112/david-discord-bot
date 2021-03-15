@@ -34,5 +34,11 @@ module.exports = (() => {
       }
     );
 
-  return { pass, facts, cmm, cardboard };
+  const jerry = (msg) =>
+    singleWord(msg, "https://i.redd.it/y8cmqu9ada341.jpg", "jerry", {
+      x: 380,
+      y: 750,
+    });
+
+  return { pass, facts, cmm, cardboard, jerry };
 })();
