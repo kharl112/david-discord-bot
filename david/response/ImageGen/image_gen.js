@@ -4,6 +4,7 @@ const {
   censoredAvatar,
   whatAvatar,
   steppedAvatar,
+  cumAvatar,
 } = require("./templates/placeAvatar");
 
 module.exports = (() => {
@@ -50,6 +51,18 @@ module.exports = (() => {
   const censored = (msg) => censoredAvatar(msg);
   const what = (msg) => whatAvatar(msg);
   const step = (msg) => steppedAvatar(msg);
+  const cum = (msg) => cumAvatar(msg);
 
-  return { pass, facts, cmm, cardboard, jerry, invert, censored, what, step };
+  return {
+    pass,
+    facts,
+    cmm,
+    cardboard,
+    jerry,
+    invert,
+    censored,
+    what,
+    step,
+    cum,
+  };
 })();

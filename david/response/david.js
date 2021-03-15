@@ -24,6 +24,8 @@ module.exports = (msg) => {
       ? ImageGen.what(msg)
       : /d\? step/i.test(msg.content)
       ? ImageGen.step(msg)
+      : /d\? cum/i.test(msg.content)
+      ? ImageGen.cum(msg)
       : /d\? roast/i.test(msg.content)
       ? Misc.roast(msg)
       : /d\? gay/i.test(msg.content)
