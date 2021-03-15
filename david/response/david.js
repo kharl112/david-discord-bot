@@ -20,6 +20,8 @@ module.exports = (msg) => {
       ? ImageGen.invert(msg)
       : /d\? censored/i.test(msg.content)
       ? ImageGen.censored(msg)
+      : /d\? what how/i.test(msg.content)
+      ? ImageGen.what(msg)
       : /d\? roast/i.test(msg.content)
       ? Misc.roast(msg)
       : /d\? gay/i.test(msg.content)

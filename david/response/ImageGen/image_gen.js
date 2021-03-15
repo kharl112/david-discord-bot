@@ -1,5 +1,9 @@
 const singleWord = require("./templates/singleWord");
-const { invertAvatar, censoredAvatar } = require("./templates/placeAvatar");
+const {
+  invertAvatar,
+  censoredAvatar,
+  whatAvatar,
+} = require("./templates/placeAvatar");
 
 module.exports = (() => {
   const pass = (msg) =>
@@ -43,6 +47,7 @@ module.exports = (() => {
 
   const invert = (msg) => invertAvatar(msg);
   const censored = (msg) => censoredAvatar(msg);
+  const what = (msg) => whatAvatar(msg);
 
-  return { pass, facts, cmm, cardboard, jerry, invert, censored };
+  return { pass, facts, cmm, cardboard, jerry, invert, censored, what };
 })();

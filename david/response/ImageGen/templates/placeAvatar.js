@@ -34,4 +34,27 @@ const censoredAvatar = (msg, size) => {
   });
 };
 
-module.exports = { invertAvatar, censoredAvatar };
+const whatAvatar = (msg) => {
+  const user = msg.mentions.users.first() || msg.author;
+  const avatar = user.displayAvatarURL().replace(/webp$/i, "png");
+  const whatImg = "https://i.ytimg.com/vi/VN2cezzpBPU/hqdefault.jpg";
+
+  return Jimp.read(avatar, (e, av) => {
+    if (e) throw e;
+    av.resize(100, 100);
+    return Jimp.read(whatImg, (e, temp) => {
+      if (e) throw e;
+      temp.composite(av, 190, 75).getBase64(Jimp.AUTO, (e, img64) => {
+        if (e) throw e;
+        const imageBuff = new Buffer.from(img64.split(",")[1], "base64");
+        const theImage = new MessageAttachment(
+          imageBuff,
+          `${user.nickname}.png`
+        );
+        return msg.channel.send(theImage);
+      });
+    });
+  });
+};
+
+module.exports = { invertAvatar, censoredAvatar, whatAvatar };
