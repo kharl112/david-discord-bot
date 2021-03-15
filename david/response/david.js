@@ -22,6 +22,8 @@ module.exports = (msg) => {
       ? ImageGen.censored(msg)
       : /d\? what how/i.test(msg.content)
       ? ImageGen.what(msg)
+      : /d\? step/i.test(msg.content)
+      ? ImageGen.step(msg)
       : /d\? roast/i.test(msg.content)
       ? Misc.roast(msg)
       : /d\? gay/i.test(msg.content)

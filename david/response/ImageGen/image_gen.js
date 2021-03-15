@@ -3,6 +3,7 @@ const {
   invertAvatar,
   censoredAvatar,
   whatAvatar,
+  steppedAvatar,
 } = require("./templates/placeAvatar");
 
 module.exports = (() => {
@@ -48,6 +49,7 @@ module.exports = (() => {
   const invert = (msg) => invertAvatar(msg);
   const censored = (msg) => censoredAvatar(msg);
   const what = (msg) => whatAvatar(msg);
+  const step = (msg) => steppedAvatar(msg);
 
-  return { pass, facts, cmm, cardboard, jerry, invert, censored, what };
+  return { pass, facts, cmm, cardboard, jerry, invert, censored, what, step };
 })();
