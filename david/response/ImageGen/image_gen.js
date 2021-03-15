@@ -1,4 +1,5 @@
 const singleWord = require("./templates/singleWord");
+const { invertAvatar } = require("./templates/placeAvatar");
 
 module.exports = (() => {
   const pass = (msg) =>
@@ -40,5 +41,7 @@ module.exports = (() => {
       y: 750,
     });
 
-  return { pass, facts, cmm, cardboard, jerry };
+  const invert = (msg) => invertAvatar(msg);
+
+  return { pass, facts, cmm, cardboard, jerry, invert };
 })();

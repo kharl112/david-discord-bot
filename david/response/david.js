@@ -16,6 +16,8 @@ module.exports = (msg) => {
       ? ImageGen.jerry(msg)
       : /d\? cardboard/i.test(msg.content)
       ? ImageGen.cardboard(msg)
+      : /d\? invert/i.test(msg.content)
+      ? ImageGen.invert(msg)
       : /d\? roast/i.test(msg.content)
       ? Misc.roast(msg)
       : /d\? gay/i.test(msg.content)
