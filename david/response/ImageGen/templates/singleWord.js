@@ -2,7 +2,8 @@ const Jimp = require("jimp");
 const { MessageAttachment } = require("discord.js");
 
 const singleWord = (msg, url, cmd, { x, y }) => {
-  const detail = msg.content.split(`d? ${cmd} `).join("");
+  const detail = msg.content.toLowerCase().split(`d? ${cmd} `).join("");
+
   return Jimp.read(url)
     .then((img) => {
       loadImage = img;
