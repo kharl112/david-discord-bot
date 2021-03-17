@@ -1,11 +1,11 @@
-const singleWord = require("./templates/singleWord");
+const singleWord = require("./templates/single_words/singleWord");
 const {
   invertAvatar,
   censoredAvatar,
   whatAvatar,
   steppedAvatar,
   cumAvatar,
-} = require("./templates/placeAvatar");
+} = require("./templates/avatar/placeAvatar");
 
 module.exports = (() => {
   const pass = (msg) =>
