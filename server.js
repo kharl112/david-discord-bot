@@ -7,7 +7,7 @@ const david = require("./david/response/david");
 client.on("ready", () => {
   console.log(`Ayyyyy! ${client.user.tag} finallly woke up!`);
   client.user.setPresence({
-    status: "dnd",
+    status: "idle",
     activity: {
       name: "sea shanties and singing with my crew while we roam in the vast sea of west indies",
       type: 2,
