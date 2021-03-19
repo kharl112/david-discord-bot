@@ -6,6 +6,8 @@ module.exports = (message) => {
   if (command.toLowerCase() === "d?") {
     /d\? attach/i.test(message.content)
       ? singleWorded.attach({ message, flag })
+      : /d\? burn/i.test(message.content)
+      ? singleWorded.burn({ message, flag })
       : null;
   }
 };
