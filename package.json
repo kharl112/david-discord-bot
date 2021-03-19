@@ -1,6 +1,6 @@
 {
   "name": "david-discord-bot",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Warning: This bot is racist, fascist and homophobic",
   "main": "index.js",
   "scripts": {
