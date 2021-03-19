@@ -12,6 +12,8 @@ module.exports = (message) => {
       ? singleWorded.jerry({ message, flag })
       : /d\? present/i.test(message.content)
       ? singleWorded.present({ message, flag })
+      : /d\? petition/i.test(message.content)
+      ? singleWorded.petition({ message, flag })
       : null;
   }
 };
