@@ -3,6 +3,6 @@ module.exports = (message) => {
   return ([command, flag, word] = [
     content[0],
     content[1],
-    content.slice(content.indexOf(content[2])).join(" "),
+    content.slice(2).join(" "),
   ]);
 };
