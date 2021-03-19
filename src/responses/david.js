@@ -8,6 +8,8 @@ module.exports = (message) => {
       ? singleWorded.attach({ message, flag })
       : /d\? burn/i.test(message.content)
       ? singleWorded.burn({ message, flag })
+      : /d\? jerry/i.test(message.content)
+      ? singleWorded.jerry({ message, flag })
       : null;
   }
 };

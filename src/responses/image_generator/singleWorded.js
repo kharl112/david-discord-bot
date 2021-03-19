@@ -8,5 +8,8 @@ module.exports = (() => {
   const burn = ({ message, flag }) =>
     singles(message, getFileLoc(flag), { x: 20, y: 35, fontSize: 32 });
 
-  return { attach, burn };
+  const jerry = ({ message, flag }) =>
+    singles(message, getFileLoc(flag), { x: 220, y: 420, fontSize: 64 });
+
+  return { attach, burn, jerry };
 })();
