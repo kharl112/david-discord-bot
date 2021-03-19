@@ -10,6 +10,8 @@ module.exports = (message) => {
       ? singleWorded.burn({ message, flag })
       : /d\? jerry/i.test(message.content)
       ? singleWorded.jerry({ message, flag })
+      : /d\? present/i.test(message.content)
+      ? singleWorded.present({ message, flag })
       : null;
   }
 };

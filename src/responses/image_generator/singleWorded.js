@@ -11,5 +11,8 @@ module.exports = (() => {
   const jerry = ({ message, flag }) =>
     singles(message, getFileLoc(flag), { x: 220, y: 420, fontSize: 64 });
 
-  return { attach, burn, jerry };
+  const present = ({ message, flag }) =>
+    singles(message, getFileLoc(flag), { x: 120, y: 85, fontSize: 128 });
+
+  return { attach, burn, jerry, present };
 })();
