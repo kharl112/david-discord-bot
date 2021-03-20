@@ -5,7 +5,7 @@ module.exports = (() => {
   const brainThrow = ({ message, flag }) =>
     placeAvatar(message, getFileLoc(flag, "avatar_placement"), {
       x: 30,
-      y: 65,
+      y: 70,
       size: 65,
     });
 
