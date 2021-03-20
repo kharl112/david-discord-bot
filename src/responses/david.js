@@ -20,6 +20,8 @@ module.exports = (message) => {
       ? singleWorded.petition({ message, flag })
       : /d\? whisper/i.test(message.content)
       ? singleWorded.whisper({ message, flag })
+      : /d\? drip/i.test(message.content)
+      ? avatarPlacement.drip({ message, flag })
       : /d\? throw/i.test(message.content)
       ? avatarPlacement.brainThrow({ message, flag })
       : /d\? surrounded/i.test(message.content)
