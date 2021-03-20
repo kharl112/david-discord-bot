@@ -18,6 +18,8 @@ module.exports = (message) => {
       ? singleWorded.realize({ message, flag })
       : /d\? petition/i.test(message.content)
       ? singleWorded.petition({ message, flag })
+      : /d\? whisper/i.test(message.content)
+      ? singleWorded.whisper({ message, flag })
       : /d\? throw/i.test(message.content)
       ? avatarPlacement.brainThrow({ message, flag })
       : /d\? surrounded/i.test(message.content)
