@@ -1,5 +1,7 @@
 const messageFlags = require("../assets/js/message/content/contentFlags");
 const singleWorded = require("./image_generator/singleWorded");
+const avatarPlacement = require("./image_generator/avatarPlacement");
+
 module.exports = (message) => {
   const [command, flag] = messageFlags(message);
 
@@ -16,6 +18,8 @@ module.exports = (message) => {
       ? singleWorded.realize({ message, flag })
       : /d\? petition/i.test(message.content)
       ? singleWorded.petition({ message, flag })
+      : /d\? throw/i.test(message.content)
+      ? avatarPlacement.brainThrow({ message, flag })
       : null;
   }
 };
