@@ -9,5 +9,12 @@ module.exports = (() => {
       size: 65,
     });
 
-  return { brainThrow };
+  const surrounded = ({ message, flag }) =>
+    placeAvatar(message, getFileLoc(flag, "avatar_placement"), {
+      x: 390,
+      y: 290,
+      size: 100,
+    });
+
+  return { brainThrow, surrounded };
 })();
