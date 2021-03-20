@@ -24,6 +24,8 @@ module.exports = (message) => {
       ? avatarPlacement.surrounded({ message, flag })
       : /d\? bother/i.test(message.content)
       ? avatarPlacement.bother({ message, flag })
+      : /d\? cum/i.test(message.content)
+      ? avatarPlacement.cum({ message, flag })
       : null;
   }
 };
