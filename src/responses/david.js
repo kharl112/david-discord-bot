@@ -22,6 +22,8 @@ module.exports = (message) => {
       ? avatarPlacement.brainThrow({ message, flag })
       : /d\? surrounded/i.test(message.content)
       ? avatarPlacement.surrounded({ message, flag })
+      : /d\? bother/i.test(message.content)
+      ? avatarPlacement.bother({ message, flag })
       : null;
   }
 };

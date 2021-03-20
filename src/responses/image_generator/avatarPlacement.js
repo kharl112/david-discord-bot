@@ -16,5 +16,12 @@ module.exports = (() => {
       size: 100,
     });
 
-  return { brainThrow, surrounded };
+  const bother = ({ message, flag }) =>
+    placeAvatar(message, getFileLoc(flag, "avatar_placement"), {
+      x: 400,
+      y: 92,
+      size: 95,
+    });
+
+  return { brainThrow, surrounded, bother };
 })();
