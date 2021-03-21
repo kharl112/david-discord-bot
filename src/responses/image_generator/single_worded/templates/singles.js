@@ -1,7 +1,7 @@
 const Jimp = require("jimp");
-const buffer = require("../../../assets/js/image/buffer");
-const getFont = require("../../../assets/js/image/getFont");
-const messageFlags = require("../../../assets/js/message/content/contentFlags");
+const buffer = require("../../../../assets/js/image/buffer");
+const getFont = require("../../../../assets/js/image/getFont");
+const messageFlags = require("../../../../assets/js/message/content/contentFlags");
 
 module.exports = (message, url, { x, y, fontSize = 64 }) => {
   const [, flag, word] = messageFlags(message);

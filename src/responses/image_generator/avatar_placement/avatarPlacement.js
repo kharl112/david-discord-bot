@@ -1,4 +1,4 @@
-const getFileLoc = require("../../assets/js/image/getFileLoc");
+const getFileLoc = require("../../../assets/js/image/getFileLoc");
 const placeAvatar = require("./templates/placeAvatar");
 
 module.exports = (() => {
@@ -37,5 +37,12 @@ module.exports = (() => {
       size: 256,
     });
 
-  return { trash, surrounded, bother, advertise, drip };
+  const simp = ({ message, flag }) =>
+    placeAvatar(message, getFileLoc(flag, "avatar_placement"), {
+      x: 50,
+      y: 135,
+      size: 220,
+    });
+
+  return { trash, surrounded, bother, advertise, drip, simp };
 })();

@@ -1,5 +1,5 @@
 const singles = require("./templates/singles");
-const getFileLoc = require("../../assets/js/image/getFileLoc");
+const getFileLoc = require("../../../assets/js/image/getFileLoc");
 
 module.exports = (() => {
   const present = ({ message, flag }) =>

@@ -1,6 +1,6 @@
 const Jimp = require("jimp");
-const buffer = require("../../../assets/js/image/buffer");
-const userAvatar = require("../../../assets/js/message/user/userAvatar");
+const buffer = require("../../../../assets/js/image/buffer");
+const userAvatar = require("../../../../assets/js/message/user/userAvatar");
 const path = require("path");
 
 module.exports = (message, url, { x, y, size }) => {

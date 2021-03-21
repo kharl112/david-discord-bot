@@ -1,6 +1,6 @@
 const messageFlags = require("../assets/js/message/content/contentFlags");
-const singleWorded = require("./image_generator/singleWorded");
-const avatarPlacement = require("./image_generator/avatarPlacement");
+const singleWorded = require("./image_generator/single_worded/singleWorded");
+const avatarPlacement = require("./image_generator/avatar_placement/avatarPlacement");
 
 module.exports = (message) => {
   const [command, flag] = messageFlags(message);
