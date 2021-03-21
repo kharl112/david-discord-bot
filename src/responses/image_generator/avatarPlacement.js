@@ -23,7 +23,7 @@ module.exports = (() => {
       size: 95,
     });
 
-  const cum = ({ message, flag }) =>
+  const advertise = ({ message, flag }) =>
     placeAvatar(message, getFileLoc(flag, "avatar_placement"), {
       x: 14,
       y: 40,
@@ -37,5 +37,5 @@ module.exports = (() => {
       size: 256,
     });
 
-  return { brainThrow, surrounded, bother, cum, drip };
+  return { brainThrow, surrounded, bother, advertise, drip };
 })();
