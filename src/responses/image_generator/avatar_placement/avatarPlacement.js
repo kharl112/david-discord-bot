@@ -1,5 +1,5 @@
 const getFileLoc = require("../../../assets/js/image/getFileLoc");
-const placeAvatar = require("./templates/placeAvatar");
+const placeAvatar = require("./templates/default");
 
 module.exports = (() => {
   const trash = ({ message, flag }) =>

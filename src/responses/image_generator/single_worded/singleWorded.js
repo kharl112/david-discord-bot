@@ -1,4 +1,4 @@
-const singles = require("./templates/singles");
+const singles = require("./templates/default");
 const getFileLoc = require("../../../assets/js/image/getFileLoc");
 
 module.exports = (() => {
