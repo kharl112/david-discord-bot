@@ -51,5 +51,12 @@ module.exports = (() => {
       fontSize: 64,
     });
 
-  return { attach, burn, jerry, present, petition, realize, whisper };
+  const sickof = ({ message, flag }) =>
+    singles(message, getFileLoc(flag, "single_worded"), {
+      x: 200,
+      y: 150,
+      fontSize: 128,
+    });
+
+  return { attach, burn, jerry, present, petition, realize, whisper, sickof };
 })();
