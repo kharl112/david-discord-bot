@@ -19,7 +19,6 @@ module.exports = (message, url, { x, y, fontSize = 64 }) => {
     .then((font) => {
       loadImage
         .print(font, x, y, word, fontSize * 6 - 10)
-        .quality(60)
         .getBase64(Jimp.AUTO, (e, img64) => {
           if (e) return console.log(e);
 
