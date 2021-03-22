@@ -38,6 +38,13 @@ module.exports = (() => {
       size: 256,
     });
 
+  const joke = ({ message, flag }) =>
+    placeAvatar(message, getFileLoc(flag, "avatar_placement"), {
+      x: 155,
+      y: 60,
+      size: 75,
+    });
+
   const simp = ({ message, flag }) =>
     withText(
       message,
@@ -55,5 +62,5 @@ module.exports = (() => {
       }
     );
 
-  return { trash, surrounded, bother, advertise, drip, simp };
+  return { trash, surrounded, bother, advertise, drip, simp, joke };
 })();
