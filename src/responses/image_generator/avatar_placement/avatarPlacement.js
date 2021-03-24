@@ -58,7 +58,7 @@ module.exports = (() => {
       color: "BLACK",
       text: `${user.username}#${user.discriminator}`,
     };
-    
+
     return withText(
       message,
       getFileLoc(flag, "avatar_placement"),
@@ -88,5 +88,26 @@ module.exports = (() => {
     );
   };
 
-  return { trash, surrounded, bother, advertise, drip, simp, joke, eww };
+  const gas = (message, flag) => {
+    const [, , word] = messageFlags(message);
+    const avatarPosition = { x: 20, y: 85, size: 75 };
+    const textPosition = {
+      fx: 215,
+      fy: 300,
+      fontSize: 64,
+      color: "WHITE",
+      text: word,
+    };
+
+    if (!word) return invalidSyntax(message);
+
+    return withText(
+      message,
+      getFileLoc(flag, "avatar_placement"),
+      avatarPosition,
+      textPosition
+    );
+  };
+
+  return { trash, surrounded, bother, advertise, drip, simp, joke, eww, gas };
 })();
