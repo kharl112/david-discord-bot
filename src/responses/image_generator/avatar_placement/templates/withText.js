@@ -15,6 +15,7 @@ module.exports = (
     return Jimp.read(url)
       .then((img) => {
         loadImage = img;
+        fontSize =  (text.length > 6 && fontSize > 8) ? fontSize / 2 : fontSize;
         return getFont(fontSize, color);
       })
       .then((font) => {
