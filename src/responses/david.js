@@ -9,6 +9,6 @@ module.exports = (message) => {
     const parent = [singleWorded, avatarPlacement].filter((node) =>
       node.hasOwnProperty(flag)
     );
-    if (parent[0]) return parent[0][flag]({message, flag});
+    if (parent[0]) return parent[0][flag](message, flag);
   }
 };

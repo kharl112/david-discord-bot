@@ -6,49 +6,49 @@ const invalidSyntax = require("../../../assets/js/embed/invalidSyntax");
 const messageFlags = require("../../../assets/js/message/content/contentFlags");
 
 module.exports = (() => {
-  const trash = ({ message, flag }) =>
+  const trash = (message, flag) =>
     placeAvatar(message, getFileLoc(flag, "avatar_placement"), {
       x: 30,
       y: 70,
       size: 65,
     });
 
-  const surrounded = ({ message, flag }) =>
+  const surrounded = (message, flag) =>
     placeAvatar(message, getFileLoc(flag, "avatar_placement"), {
       x: 390,
       y: 290,
       size: 100,
     });
 
-  const bother = ({ message, flag }) =>
+  const bother = (message, flag) =>
     placeAvatar(message, getFileLoc(flag, "avatar_placement"), {
       x: 400,
       y: 92,
       size: 95,
     });
 
-  const advertise = ({ message, flag }) =>
+  const advertise = (message, flag) =>
     placeAvatar(message, getFileLoc(flag, "avatar_placement"), {
       x: 14,
       y: 40,
       size: 320,
     });
 
-  const drip = ({ message, flag }) =>
+  const drip = (message, flag) =>
     placeAvatar(message, getFileLoc(flag, "avatar_placement"), {
       x: 305,
       y: 100,
       size: 256,
     });
 
-  const joke = ({ message, flag }) =>
+  const joke = (message, flag) =>
     placeAvatar(message, getFileLoc(flag, "avatar_placement"), {
       x: 155,
       y: 60,
       size: 75,
     });
 
-  const simp = ({ message, flag }) => {
+  const simp = (message, flag) => {
     const { user } = userAvatar(message);
     const avatarPosition = { x: 50, y: 135, size: 220 };
     const textPosition = {
@@ -67,7 +67,7 @@ module.exports = (() => {
     );
   };
 
-  const eww = ({ message, flag }) => {
+  const eww = (message, flag) => {
     const [, , word] = messageFlags(message);
     const avatarPosition = { x: 190, y: 600, size: 160 };
     const textPosition = {
