@@ -2,13 +2,11 @@ const Jimp = require("jimp");
 const buffer = require("../../../../assets/js/image/buffer");
 const getFont = require("../../../../assets/js/image/getFont");
 const messageFlags = require("../../../../assets/js/message/content/contentFlags");
+const invalidSyntax = require("../../../../assets/js/embed/invalidSyntax");
 
 module.exports = (message, url, { x, y, fontSize = 64 }) => {
-  const [, flag, word] = messageFlags(message);
-  if (!word)
-    return message.channel.send(
-      `**you need to add a __sentence__ for that like:**\n\`d? ${flag} "your sentence here"\``
-    );
+  const [, , word] = messageFlags(message);
+  if (!word) return invalidSyntax(message);
 
   return Jimp.read(url)
     .then((img) => {
