@@ -2,6 +2,8 @@ const getFileLoc = require("../../../assets/js/image/getFileLoc");
 const placeAvatar = require("./templates/default");
 const withText = require("./templates/withText");
 const userAvatar = require("../../../assets/js/message/user/userAvatar");
+const invalidSyntax = require("../../../assets/js/embed/invalidSyntax");
+const messageFlags = require("../../../assets/js/message/content/contentFlags");
 
 module.exports = (() => {
   const trash = ({ message, flag }) =>
@@ -48,23 +50,43 @@ module.exports = (() => {
 
   const simp = ({ message, flag }) => {
     const { user } = userAvatar(message);
-    withText(
+    const avatarPosition = { x: 50, y: 135, size: 220 };
+    const textPosition = {
+      fx: 460,
+      fy: 420,
+      fontSize: 16,
+      color: "BLACK",
+      text: `${user.username}#${user.discriminator}`,
+    };
+    
+    return withText(
       message,
       getFileLoc(flag, "avatar_placement"),
-      {
-        x: 50,
-        y: 135,
-        size: 220,
-      },
-      {
-        fx: 460,
-        fy: 420,
-        fontSize: 16,
-        color: "BLACK",
-        text: `${user.username}#${user.discriminator}`,
-      }
+      avatarPosition,
+      textPosition
     );
   };
 
-  return { trash, surrounded, bother, advertise, drip, simp, joke };
+  const eww = ({ message, flag }) => {
+    const [, , word] = messageFlags(message);
+    const avatarPosition = { x: 190, y: 600, size: 160 };
+    const textPosition = {
+      fx: 100,
+      fy: 180,
+      fontSize: 64,
+      color: "BLACK",
+      text: word,
+    };
+
+    if (!word) return invalidSyntax(message);
+
+    return withText(
+      message,
+      getFileLoc(flag, "avatar_placement"),
+      avatarPosition,
+      textPosition
+    );
+  };
+
+  return { trash, surrounded, bother, advertise, drip, simp, joke, eww };
 })();
