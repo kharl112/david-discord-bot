@@ -10,8 +10,6 @@ module.exports = (
   { fx, fy, fontSize, color, text }
 ) => {
   const { user, avatar } = userAvatar(message);
-  if (!text) text = `${user.username}#${user.discriminator}`;
-  
   return Jimp.read(avatar, (e, av) => {
     if (e) throw e;
     return Jimp.read(url)

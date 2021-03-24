@@ -1,6 +1,7 @@
 const getFileLoc = require("../../../assets/js/image/getFileLoc");
 const placeAvatar = require("./templates/default");
 const withText = require("./templates/withText");
+const userAvatar = require("../../../assets/js/message/user/userAvatar");
 
 module.exports = (() => {
   const trash = ({ message, flag }) =>
@@ -45,7 +46,8 @@ module.exports = (() => {
       size: 75,
     });
 
-  const simp = ({ message, flag }) =>
+  const simp = ({ message, flag }) => {
+    const { user } = userAvatar(message);
     withText(
       message,
       getFileLoc(flag, "avatar_placement"),
@@ -59,8 +61,10 @@ module.exports = (() => {
         fy: 420,
         fontSize: 16,
         color: "BLACK",
+        text: `${user.username}#${user.discriminator}`,
       }
     );
+  };
 
   return { trash, surrounded, bother, advertise, drip, simp, joke };
 })();
