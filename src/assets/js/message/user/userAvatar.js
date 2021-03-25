@@ -1,5 +1,5 @@
-module.exports = (msg) => {
-  const user = msg.mentions.users.first() || msg.author;
+module.exports = (message) => {
+  const user = message.mentions.users.first() || message.author;
   const avatar = user.displayAvatarURL().replace(/webp$/i, "png");
   return { user, avatar };
 };
