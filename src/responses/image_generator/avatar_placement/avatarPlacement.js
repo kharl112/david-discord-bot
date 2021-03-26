@@ -54,7 +54,7 @@ module.exports = (() => {
     const textPosition = {
       fx: 460,
       fy: 420,
-      fontSize: 16,
+      fontSize: 32,
       color: "BLACK",
       text: `${user.username}#${user.discriminator}`,
     };
