@@ -21,8 +21,6 @@ module.exports = (message) => {
       return message.channel.send(`Command does not exist`);
 
     //return props as functions
-    if (parent[0]) return parent[0][flag]({ message, flag });
-
-    if (parent[0]) return parent[0][flag](message, flag);
+    return parent[0][flag](message, flag);
   }
 };

@@ -4,6 +4,7 @@ const withText = require("./templates/withText");
 const userAvatar = require("../../../assets/js/message/user/userAvatar");
 const invalidSyntax = require("../../../assets/js/embed/invalidSyntax");
 const messageFlags = require("../../../assets/js/message/content/contentFlags");
+const getMentionedOrUser = require("../../../assets/js/message/user/getMentionedOrUser");
 
 module.exports = (() => {
   const trash = (message, flag) =>
@@ -49,7 +50,7 @@ module.exports = (() => {
     });
 
   const simp = (message, flag) => {
-    const { user } = userAvatar(message);
+    const user = getMentionedOrUser(message);
     const avatarPosition = { x: 50, y: 135, size: 220 };
     const textPosition = {
       fx: 460,

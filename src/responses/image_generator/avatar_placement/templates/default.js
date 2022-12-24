@@ -1,10 +1,10 @@
 const Jimp = require("jimp");
 const buffer = require("../../../../assets/js/image/buffer");
-const userAvatar = require("../../../../assets/js/message/user/userAvatar");
 const imageAttachment = require("../../../../assets/js/message/content/imageAttachment");
+const getMentionedOrUser = require("../../../../assets/js/message/user/getMentionedOrUser");
 
 module.exports = (message, url, { x, y, size }) => {
-  const { user } = userAvatar(message);
+  const user = getMentionedOrUser(message);
 
   return Jimp.read(imageAttachment(message), (e, av) => {
     if (e) throw e;
