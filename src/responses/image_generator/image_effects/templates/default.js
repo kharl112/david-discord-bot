@@ -1,6 +1,7 @@
 const Jimp = require("jimp");
 const imageAttachment = require("../../../../assets/js/message/content/imageAttachment");
 const buffer = require("../../../../assets/js/image/buffer");
+const getMentionedOrUser = require("../../../../assets/js/message/user/getMentionedOrUser");
 
 module.exports = (message, flag) => {
   const user = getMentionedOrUser(message);
