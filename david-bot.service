@@ -1,0 +1,13 @@
+[Unit]
+Description=David Discord Bot
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/apps/david-discord-bot
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
