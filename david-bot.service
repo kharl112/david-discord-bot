@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/apps/david-discord-bot
+WorkingDirectory=/apps/david-discord-bot
 ExecStart=/usr/bin/node server.js
 Restart=on-failure
 
